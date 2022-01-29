@@ -1,0 +1,12 @@
+Official Website of Selenium: https://www.selenium.dev/
+
+Dependency downloading source:
+Repository from which we can find the dependencies: https://mvnrepository.com/
+Repository in which the package is stored: https://repo1.maven.org/maven2/
+Where it is stored into my system? .m2 folder -> C:\Users\<Username>\.m2
+
+Program to test
+URL: http://leaftaps.com/opentaps/control/main
+Username: Demosalesmanager
+Password: crmsfa
+
