@@ -13,18 +13,18 @@ public class LearnAccessModifer {
 		obj.method3();
 	}
 	public int a = 5;	// public variable
-	private int b = 6;	// private variable
-	int c = 7;		// default variable
+	public int b = 6;	// private variable
+	public int c = 7;		// default variable
 	// public method
 	public void method1() {
 		System.out.println("Public method");
 	}
 	// private method
-	private void method2() {
+	public void method2() {
 		System.out.println("Private method");
 	}
 	// default method
-	void method3() {
+	public void method3() {
 		System.out.println("default method");
 	}
 }
