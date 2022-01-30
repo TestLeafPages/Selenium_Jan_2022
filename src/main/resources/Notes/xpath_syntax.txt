@@ -1,0 +1,91 @@
+Basic Xpath:
+------------
+Attribute Based Xpath:
+=======================
+syntax:
+//tagName[@attributeName='attributeValue']
+Eg:
+//input[@id='username']
+//label[@for='username']
+
+Text Based Xpath:
+==================
+//tagName[text()='text value']
+
+//h2[text()='Leaftaps Login']
+//label[text()='Username']
+
+Partial Match Xpath:
+=====================
+//tagName[contains(text(),'partialValue')]
+//tagName[contains(@attribute,'partial value')]
+
+//a[contains(text(),'CRM/SFA')]
+
+//input[contains(@name,'USER')]
+
+Collection / Index Based Xpath:
+===============================
+
+(xpath)[index]
+
+(//select)[5]
+(//input[@class='inputLogin'])[2]
+
+Advanced Xpath: 
+---------------
+
+Parent to Child:  single slash
+=================
+parent xpath/tagName of the child
+//div[@id='form']/h2
+
+Child to Parent:
+================
+child xpath/parent::tagName of the parent
+child xpath/..
+//label[@for='password']/parent::p
+//label[@for='password']/..
+
+Grandparent to Grandchild: //
+==========================
+Grandparent xpath//tagName of the Grandchild
+//form[@id='login']//label
+
+(//form[@id='login']//label)[2]
+
+
+Grandchild to Grandparent:
+===========================
+Grandchild xpath/ancestor::tagName of Grandparent
+Grandchild xpath/../..
+
+//label[@for='username']/ancestor::form
+//label[@for='username']/../..
+
+Elder Sibling to Younger Sibling:
+==================================
+Elder Sibling xpath/following-sibling::tagName of the younger
+
+//label[text()='Username']/following-sibling::input
+
+Younger Sibling to Elder Sibling:
+----------------------------------
+Younger sibling xpath/preceding-sibling::tagName of the elder
+
+//input[@id='password']/preceding-sibling::label
+
+Elder Cousin to Younger Cousin:
+=================================
+Elder Cousin xpath/following::tagName of the younger
+
+//label[text()='Username']/following::label
+
+Younger Cousin to Elder Cousin:
+=================================
+Younger Cousin xpath/preceding::tagName of the elder
+
+//label[text()='Password']/preceding::label
+
+
+
