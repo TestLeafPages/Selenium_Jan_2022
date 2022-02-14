@@ -1,0 +1,108 @@
+Week 4 -> Adv Selenium
+findElement & findElements, WebTable,  Waits, Snapshot
+TargetLocators (Alert, frames & Windows), Actions
+
+findElement 
+-> used to locate one element 
+-> returns WebElement
+-> throws NoSuchElement Exception when the element is not found
+findElements 
+-> used to locate more than one likely elements 
+-> returns List<WebElement> 
+-> throws No Exception when element is not found
+
+User can not interact with multiple elements on a single go. 
+User need to iterate over the list to get each element and interact with it.
+
+WebTable:
+HTML Table design:
+<table>
+	<tr> <th></th>  <th></th>  <th></th>  <th></th> </tr>
+	<tr> <td></td>  <td></td>  <td></td>  <td></td> </tr>
+	<tr> <td></td>  <td></td>  <td></td>  <td></td> </tr>
+	<tr> <td></td>  <td></td>  <td></td>  <td></td> </tr>
+	<tr> <td></td>  <td></td>  <td></td>  <td></td> </tr>
+	<tr> <td></td>  <td></td>  <td></td>  <td></td> </tr>
+</table>
+
+We need to find the table -> Within the table we need to get the rows
+-> Then the table data from the rows.
+
+From here, instead driver. -> elementTable. we will find the rows
+elementRows. -> we will find the table data
+
+Waits
+1. Implicit Wait
+-> One time implementation for a single execution.
+-> Impacts only findElement() & findElements() methods.
+-> Standard Implicit wait time is 30 Seconds.
+-> Will not throw any timeout exception after waiting for the element
+-> Has a polling time of 500 ms
+
+2. Explicit Wait
+-> Conditional based waiting.
+-> Webdriverwait is a class for which the object creation is one time implementation.
+-> Should be mentioned for each Condition.
+-> Will throw a timeout exception when the condition is true within the given time.
+
+3. Java Wait
+-> Thread.sleep() -> Explicit wait with no polling
+-> throws Intrupted exception when used. 
+-> Time should be given in milliseconds
+
+Snapshots
+1. Full Page snap shot
+Snap shot should be take separately in FILE format 
+Empty JPG/PNG/any picture format file should be created separately
+Using Apache Common IO package we copy paste the taken snap shot and
+created picture file to build the snap shot
+2. Element snap shot
+same as above, but instead of driver.getScreenShotAs() -> element.getScreenShotAs()
+
+TargetLocators
+1.Alert
+-> Alerts can not be inspected.
+-> Alerts can not be ignored means when alert is on the entire DOM will be
+frozen so the web page can not be accessed.
+-> There can be only one alert can be populated at a time.
+-> Only predefined actions can be performed on an Alert.
+-> Can not take a snap shot when alert is on.
+-> Types: Simple Alert, Confirm Alert & Prompt Alert.
+-> Methods: accept(), dismiss(), getText(), sendKeys().
+-> Exceptions: NoAlertPresent, UnhandledAlert
+2.Frames
+-> Frames are built to create a partition in a page.
+-> There can be sub partitions of frames called as nested frame.
+-> There can be any number of frames at a time in a page.
+-> User can switch into the frame by driver.switchTo().frame()
+-> User can switch into the frame using index, string, Webelement
+-> Index starts with 0.
+-> String defines, if the iframe tag has id or name attribute, then
+the value of the attributes can be used as String
+-> WebElement, user can find the iframe tag as a normal WebElement 
+and able to pass it as parameter.
+-> Exception: NoSuchFrame
+3.Windows
+-> Windows do not have a proper locator to locate it.
+-> Windows locator is defined by a dynamic unique alpha numeric keys
+-> The unique key of current window can be retrieved by
+driver.getWindowHandle() -> String
+-> When you have multiple windows the user need to use 
+driver.getWindowHandles() -> Set<String>
+-> The order is maintained by the LinkedHashSet.
+-> Need to convert the Set -> List to get one window handle and to 
+switch into it.
+-> Also, can be iterated throw foreach to do the same.
+-> Exception: NoSuchWindow Exception when wrong/invalid window handle.
+
+Actions Class
+Actions class is used to perform the Advanced User Interactions like
+multiselect, drag and drop, etc,.
+-> This performs mostly the keyboard and mouse actions on the app.
+-> Also, recommended not to use the physical keyboard or mouse,
+when the test case using Actions class.
+-> Action class methods will never throw an Exception, ie., we can not
+validate the action is performed or not. Because they are done throw 
+Java script.
+-> .perform() at the end of the Action class Statement is mandatory.
+Without .perform() the action will not be performed.
