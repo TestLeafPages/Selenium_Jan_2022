@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Regression" parallel="classes" verbose="5">
+  <test thread-count="3" name="Leads">
+    <classes>
+      <class name="testcase.CreateLead"/>
+      <class name="testcase.EditLead"/>
+    </classes>
+  </test> <!-- Test -->
+  <test thread-count="2" name="Contacts">
+    <classes>
+      <class name="testcase.CreateContact"/>
+      <class name="testcase.EditContact"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
