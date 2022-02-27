@@ -1,0 +1,91 @@
+Cucumber Classroom Notes:
+
+TDD - Test Driven Development
+-----------------------------
+- Write the test cases first based on the requirement
+- Test cases should be apporved by the project team
+- Development will be based on the test cases
+
+
+ATDD - Aceptance Test Driven Development:
+-----------------------------------------
+- Write the acceptance test cases first based on the requirement
+- Test cases should be apporved by the project team
+- Development will be based on the test cases 
+
+Con: Communication gap between the Technical (Dev & Testers)
+     team and Non Technical team (Client /product owner)
+
+BDD - Behaviour Driven Development:
+-----------------------------------
+To address the communication gap between tech and non tech team
+- Write the test scenarios using Gherkin (common) language
+  first
+- Approve the test scenarios
+- BDD test scenarios will drive the development
+
+
+Gherkin Keywords:
+------------------
+Feature  - Used to describe the functionality
+Scenario - Used to describe the test case
+Given - Used to represent pre-requisite for a scenario
+When - Used to represent test step / test condition
+Then - Used to represent the expected result for positive scenario
+But - Used to represent the expected result for negative scenario
+
+How to parameterize the data from feature file
+===============================================
+1. Enclose the data with '' in the feature file
+2. Replace the data in the cucucmber annotation text with {string}
+3. Create argument for the method to get input
+4. Replace the hardcoded value with the argument variable
+
+Cucumber Exceptions:
+---------------------
+UnDefinedStepException - When a step doesn't have implementation
+DuplicateStepDefinitionException - When a step having more than 1 implementation
+
+How to pass multiple data to a scenario:
+-----------------------------------------
+1. Scenario Outline keyword should be used
+2. Examples should follow Scenario Outline
+3. Define the column names inside || after Examples (first row for column names)
+4. Second row onward give the data inside ||
+
+Background: Used to have common precondition for all the scenarios in a feature file
+
+Limitations:
+------------
+1. Background is not applicable for all the scenarios across multiple feature files
+2. There is no keyword to execute common post condition
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	 
+	 
+
+
+
+
+
+
