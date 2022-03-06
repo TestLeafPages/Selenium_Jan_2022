@@ -1,0 +1,32 @@
+PageFactory:
+	1. @FindBy
+	2. @FindBys - AND condition
+	3. @FindAll - OR Condition
+	4. @CacheLookup
+
+Advantages:
+1. Better Readability
+2. Code is Optimized
+3. Multiple locators can be used to locate element
+4. Better Performance
+
+Disadvantages:
+1. When we want to automate multilingual applications, we can't use page factory
+2. Can't have dynamic xpath
+
+	1. findElement
+	2. findElements
+
+Exception:
+Abnormal behaviour which distrupts your program execution
+
+Abnormal:
+Error - Can't be handled
+	StackOverflowError
+Exception - can be handled in program
+	1. Compile time exception/ checked exception
+	2. Runtime exception/ unchecked exception
+		All Selenium Exceptions are Runtime Exceptions
+
+try, catch. finally, throw
+
